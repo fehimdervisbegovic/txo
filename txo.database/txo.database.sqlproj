@@ -68,4 +68,7 @@
     <Build Include="dbo\Tables\SupplierNote.sql" />
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="txo.database.publish.xml" />
+  </ItemGroup>
 </Project>
