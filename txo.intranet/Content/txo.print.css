@@ -166,11 +166,11 @@ a:hover{ color:#000000;}
 .login-form-sec{ border:1px solid #e0e1e1; background:#f2f2f2; border-radius:3px; font-size:15px; color:#636363;}
 .login-form-sec ul{ padding:40px;}
 .login-form-sec ul li{ margin-bottom:20px;}
-.login-form-sec ul li input.email-field{color:#636363; width:506px; border:1px solid #e6e6e6; background:#fff url(../images/form-email-img.png) no-repeat 15px center;  border-radius:3px; padding:20px 36px;}
-.login-form-sec ul li input.password-field{ color:#636363;background:#fff url(../images/lock-img.png) no-repeat 15px center;border-radius:3px; padding:20px 36px; width:506px; border:1px solid #e6e6e6;}
+.login-form-sec ul li input.email-field{color:#636363; width:100%; border:1px solid #e6e6e6; background:#fff url(../images/form-email-img.png) no-repeat 15px center;  border-radius:3px; padding:20px 36px;}
+.login-form-sec ul li input.password-field{ color:#636363;background:#fff url(../images/lock-img.png) no-repeat 15px center;border-radius:3px; padding:20px 36px; width:100%; border:1px solid #e6e6e6;}
 .login-form-sec ul li input.check{ margin-right: 10px;}
 .login-form-sec ul li a span{ float:right; color:#d8761b;}
-.login-form-sec ul li input.captcha { width:393px; border:1px solid #e6e6e6;border-radius:3px;padding:20px 36px;color:#636363;} 
+.login-form-sec ul li input.captcha { width:80%; border:1px solid #e6e6e6;border-radius:3px;padding:20px 36px;color:#636363;} 
 .login-form-sec ul li img{  border:1px solid #e6e6e6;} 
 .login-form-sec ul li .login-btn{ background:#d8761b url(../images/loginarrow.png) no-repeat 56% center; padding:20px 0; text-align:center; display:block; cursor:pointer; border:none; width:100%; color:#fff; text-transform:uppercase; font-size:15px;border-radius:3px;} 
 .login-form-sec ul li .login-btn:hover{ background:#f0790b url(../images/loginarrow.png) no-repeat 56% center; }

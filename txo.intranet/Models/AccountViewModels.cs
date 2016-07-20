@@ -58,7 +58,7 @@ namespace txo.intranet.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Remember Password")]
         public bool RememberMe { get; set; }
     }
 
