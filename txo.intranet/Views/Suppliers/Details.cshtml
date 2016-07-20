@@ -1,114 +1,72 @@
 ﻿@model txo.entities.Supplier
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Supplier details";
 }
+<div class="content">
+    <div class="panel panel-default" style="margin-top:-2px">
 
-<h2>Details</h2>
+        <div class="panel-body">
 
-<div>
-    <h4>Supplier</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <div class="row m-sm">
+                <div class="col-md-2"><label>Name:</label></div>
+                <div class="col-md-4">@Html.DisplayFor(model => model.Name)</div>
+                
+                <div class="col-md-2 "><label>Created:</label></div>
+                <div class="col-md-2">@Html.DisplayFor(model => model.Created)</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+                <div class="col-md-1 "><label>Active:</label></div>
+                <div class="col-md-1">@if (Model.Enabled)
+                { @:Yes
+                    }
+                else
+                {@:No
+                    }
+                </div>
+                
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address1)
-        </dt>
+            <div class="row m-sm">
+                <div class="col-md-2 "><label>Address 1:</label></div>
+                <div class="col-md-4">@Html.DisplayFor(model => model.Address1)</div>
+                <div class="col-md-2 "><label>Address 2:</label></div>
+                <div class="col-md-4">@Html.DisplayFor(model => model.Address2)</div>                
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address1)
-        </dd>
+            <div class="row m-sm">
+                <div class="col-md-2 "><label>City:</label></div>
+                <div class="col-md-2">@Html.DisplayFor(model => model.City)</div>
+                <div class="col-md-1 "><label>State:</label></div>
+                <div class="col-md-1">@Html.DisplayFor(model => model.State)</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address2)
-        </dt>
+                <div class="col-md-2 "><label>Postal code:</label></div>
+                <div class="col-md-4">@Html.DisplayFor(model => model.PostalCode)</div>                
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address2)
-        </dd>
+            <div class="row m-sm">
+                <div class="col-md-2 "><label>Contact name:</label></div>
+                <div class="col-md-4">@Html.DisplayFor(model => model.ContactName)</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.City)
-        </dt>
+                <div class="col-md-2 "><label>Contact phone:</label></div>
+                <div class="col-md-4">@Html.DisplayFor(model => model.ContactPhone)</div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.City)
-        </dd>
+            <div class="row m-sm">
+                <div class="col-md-2 "><label>Contact email:</label></div>
+                <div class="col-md-4">@Html.DisplayFor(model => model.ContactEmail)</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.State)
-        </dt>
+                <div class="col-md-2 "><label>Time zone:</label></div>
+                <div class="col-md-4">@Html.DisplayFor(model => model.TimeZone)</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.State)
-        </dd>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PostalCode)
-        </dt>
+        </div>
+        <div class="panel-footer">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.PostalCode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactPhone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactPhone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TimeZone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TimeZone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Created)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Created)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Enabled)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Enabled)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactEmail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactEmail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactName)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
