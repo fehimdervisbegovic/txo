@@ -276,7 +276,7 @@ a:hover{ color:#000000;}
 .support-form-sec ul li.info textarea{ background:#fff url(../images/info-img.png) no-repeat 10px 11px;}
 .support-form-sec ul li.send1 input{ background:#008000; padding:12px 24px;border-radius:3px; border:none; font-size:15px; color:#fff; text-transform:uppercase; display:inline-block;width: auto; float:right}
 .support-form-sec ul li.send1 a{ background:#d8761b url(../images/backarrow.png) no-repeat 10% center; padding:12px 24px;border-radius:3px; border:none; font-size:15px; color:#fff; text-transform:uppercase; display:inline-block;width: auto; float:left}
-.support-form-sec ul li.send1 input:hover{background:#f0790b url(../images/loginarrow.png) no-repeat 80% center;}
+.support-form-sec ul li.send1 input:hover{background:#f0790b url(../images/loginarrow.png) no-repeat 90% center;}
 .support-form-sec ul li.send1{ text-align:center; width:100%;}
 .support-request-section p { color:#636363; font-size:18px; line-height:28px; text-align:center; padding-bottom:30px;}
 .support-request-section span{ display:block;}
