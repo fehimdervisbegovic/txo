@@ -1,114 +1,22 @@
 ﻿@model txo.entities.Supplier
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Supplier details";
 }
+<div class="content">
+    <div class="panel panel-default" style="margin-top:-2px">
 
-<h2>Details</h2>
+        <div class="panel-body">
 
-<div>
-    <h4>Supplier</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            @Html.Partial("_Detail")
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+        </div>
+        <div class="panel-footer">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.City)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.City)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.State)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.State)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PostalCode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PostalCode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactPhone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactPhone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TimeZone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TimeZone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Created)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Created)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Enabled)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Enabled)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactEmail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactEmail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactName)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
