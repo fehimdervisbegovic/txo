@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="txoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ContactType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="Address1" Type="varchar" MaxLength="100" />
+          <Property Name="Address2" Type="varchar" MaxLength="100" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+          <Property Name="State" Type="varchar" MaxLength="100" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="30" />
+          <Property Name="ContactPhone" Type="varchar" MaxLength="30" />
+          <Property Name="TimeZone" Type="tinyint" />
+          <Property Name="Created" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="ContactEmail" Type="varchar" MaxLength="255" />
+          <Property Name="ContactName" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="SupplierCommunication">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Created" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Comment" Type="varchar(max)" Nullable="false" />
+          <Property Name="SupplierID" Type="int" Nullable="false" />
+          <Property Name="ReasonForContact" Type="varchar" MaxLength="50" />
+          <Property Name="ContactType" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SupplierNote">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Created" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Note" Type="varchar(max)" Nullable="false" />
+          <Property Name="SupplierID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_SupplierCommunication_ContactType">
+          <End Role="ContactType" Type="Self.ContactType" Multiplicity="1" />
+          <End Role="SupplierCommunication" Type="Self.SupplierCommunication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContactType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplierCommunication">
+              <PropertyRef Name="ContactType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierCommunication_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="SupplierCommunication" Type="Self.SupplierCommunication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplierCommunication">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierNote_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="SupplierNote" Type="Self.SupplierNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplierNote">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="txoModelStoreContainer">
+          <EntitySet Name="ContactType" EntityType="Self.ContactType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupplierCommunication" EntityType="Self.SupplierCommunication" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupplierNote" EntityType="Self.SupplierNote" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_SupplierCommunication_ContactType" Association="Self.FK_SupplierCommunication_ContactType">
+            <End Role="ContactType" EntitySet="ContactType" />
+            <End Role="SupplierCommunication" EntitySet="SupplierCommunication" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierCommunication_Supplier" Association="Self.FK_SupplierCommunication_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="SupplierCommunication" EntitySet="SupplierCommunication" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierNote_Supplier" Association="Self.FK_SupplierNote_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="SupplierNote" EntitySet="SupplierNote" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="txoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ContactType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="SupplierCommunication" Relationship="Self.FK_SupplierCommunication_ContactType" FromRole="ContactType" ToRole="SupplierCommunication" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPhone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TimeZone" Type="Byte" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="ContactEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ContactName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SupplierCommunication" Relationship="Self.FK_SupplierCommunication_Supplier" FromRole="Supplier" ToRole="SupplierCommunication" />
+          <NavigationProperty Name="SupplierNote" Relationship="Self.FK_SupplierNote_Supplier" FromRole="Supplier" ToRole="SupplierNote" />
+        </EntityType>
+        <EntityType Name="SupplierCommunication">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SupplierID" Type="Int32" Nullable="false" />
+          <Property Name="ReasonForContact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactType" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="ContactType1" Relationship="Self.FK_SupplierCommunication_ContactType" FromRole="SupplierCommunication" ToRole="ContactType" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_SupplierCommunication_Supplier" FromRole="SupplierCommunication" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="SupplierNote">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SupplierID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_SupplierNote_Supplier" FromRole="SupplierNote" ToRole="Supplier" />
+        </EntityType>
+        <Association Name="FK_SupplierCommunication_ContactType">
+          <End Role="ContactType" Type="Self.ContactType" Multiplicity="1" />
+          <End Role="SupplierCommunication" Type="Self.SupplierCommunication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContactType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplierCommunication">
+              <PropertyRef Name="ContactType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierCommunication_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="SupplierCommunication" Type="Self.SupplierCommunication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplierCommunication">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierNote_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="SupplierNote" Type="Self.SupplierNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplierNote">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="txoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ContactType" EntityType="Self.ContactType" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" />
+          <EntitySet Name="SupplierCommunication" EntityType="Self.SupplierCommunication" />
+          <EntitySet Name="SupplierNote" EntityType="Self.SupplierNote" />
+          <AssociationSet Name="FK_SupplierCommunication_ContactType" Association="Self.FK_SupplierCommunication_ContactType">
+            <End Role="ContactType" EntitySet="ContactType" />
+            <End Role="SupplierCommunication" EntitySet="SupplierCommunication" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierCommunication_Supplier" Association="Self.FK_SupplierCommunication_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="SupplierCommunication" EntitySet="SupplierCommunication" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierNote_Supplier" Association="Self.FK_SupplierNote_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="SupplierNote" EntitySet="SupplierNote" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="txoModelStoreContainer" CdmEntityContainer="txoEntities">
+          <EntitySetMapping Name="ContactType">
+            <EntityTypeMapping TypeName="txoModel.ContactType">
+              <MappingFragment StoreEntitySet="ContactType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supplier">
+            <EntityTypeMapping TypeName="txoModel.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupplierCommunication">
+            <EntityTypeMapping TypeName="txoModel.SupplierCommunication">
+              <MappingFragment StoreEntitySet="SupplierCommunication">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="ReasonForContact" ColumnName="ReasonForContact" />
+                <ScalarProperty Name="ContactType" ColumnName="ContactType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupplierNote">
+            <EntityTypeMapping TypeName="txoModel.SupplierNote">
+              <MappingFragment StoreEntitySet="SupplierNote">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

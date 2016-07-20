@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "TXO Suppliers";
+}
+
+
+<form action="/SupplierDetails" method="post">
+    <input name="__RequestVerificationToken" type="hidden" value="orD9lLeCxnjV8PRPVV7Y1m99VFYE8lAiXNYAb0FSDlHpWc_VDLoXzWFkzrZrXg9QAKohKqfDDIggpwmx7Ig8Qb7AmtW6KhmULijZh_H-gNs1">    
+    <div class="container">
+        <div class="support-request-section">
+            <div class="support-form-sec">
+
+                <ul class="reset">
+                    <li>
+                        <select class="reason form-control" id="Reason" name="Reason">
+                            <option value="">Reason for contacting</option>
+                            <option value="Delivery">Delivery Problem</option>
+                            <option value="Product">Problem with Product</option>
+                            <option value="TechSupport">Technical Support</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </li>
+                    <li class="nametxt1">
+                        <input class="form-control text-box single-line" id="Name" name="Name" placeholder="Name" type="text" value="">
+                    </li>
+                    <li>
+                        <input class="purchased text-box single-line" id="Email" name="Email" placeholder="Email Address" type="text" value="">
+                    </li>
+                    <li>
+                        <input class="purchased text-box single-line" id="Store" name="Store" placeholder="Where Purchased?" type="text" value="">
+                    </li>
+                    <li class="orderid">
+                        <input class="nametxt text-box single-line" id="OrderID" name="OrderID" placeholder="Order ID" type="text" value="">
+                    </li>
+                    <li class="tracking">
+                        <input class="nametxt text-box single-line" id="TrackingNumber" name="TrackingNumber" placeholder="Tracking Number" type="text" value="">
+                    </li>
+                    <li class="info">
+                        <textarea cols="20" htmlattributes="{ placeholder = Information }" id="Body" name="Body" rows="2"></textarea>
+                    </li>
+                    <li class="send1">
+                        <input type="submit" value="Send" class="btn btn-default">
+                    </li>
+                </ul>
+                <div class="clear"></div>
+
+                <p>
+                    Support request has been sent, you should receive an email
+                    <span>confirmation shortly.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</form>
+
