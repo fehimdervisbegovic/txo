@@ -8,57 +8,7 @@
 
         <div class="panel-body">
 
-            <div class="row m-sm">
-                <div class="col-md-2"><label>Name:</label></div>
-                <div class="col-md-4">@Html.DisplayFor(model => model.Name)</div>
-                
-                <div class="col-md-2 "><label>Created:</label></div>
-                <div class="col-md-2">@Html.DisplayFor(model => model.Created)</div>
-
-                <div class="col-md-1 "><label>Active:</label></div>
-                <div class="col-md-1">@if (Model.Enabled)
-                { @:Yes
-                    }
-                else
-                {@:No
-                    }
-                </div>
-                
-            </div>
-
-            <div class="row m-sm">
-                <div class="col-md-2 "><label>Address 1:</label></div>
-                <div class="col-md-4">@Html.DisplayFor(model => model.Address1)</div>
-                <div class="col-md-2 "><label>Address 2:</label></div>
-                <div class="col-md-4">@Html.DisplayFor(model => model.Address2)</div>                
-            </div>
-
-            <div class="row m-sm">
-                <div class="col-md-2 "><label>City:</label></div>
-                <div class="col-md-2">@Html.DisplayFor(model => model.City)</div>
-                <div class="col-md-1 "><label>State:</label></div>
-                <div class="col-md-1">@Html.DisplayFor(model => model.State)</div>
-
-                <div class="col-md-2 "><label>Postal code:</label></div>
-                <div class="col-md-4">@Html.DisplayFor(model => model.PostalCode)</div>                
-            </div>
-
-            <div class="row m-sm">
-                <div class="col-md-2 "><label>Contact name:</label></div>
-                <div class="col-md-4">@Html.DisplayFor(model => model.ContactName)</div>
-
-                <div class="col-md-2 "><label>Contact phone:</label></div>
-                <div class="col-md-4">@Html.DisplayFor(model => model.ContactPhone)</div>
-            </div>
-
-            <div class="row m-sm">
-                <div class="col-md-2 "><label>Contact email:</label></div>
-                <div class="col-md-4">@Html.DisplayFor(model => model.ContactEmail)</div>
-
-                <div class="col-md-2 "><label>Time zone:</label></div>
-                <div class="col-md-4">@Html.DisplayFor(model => model.TimeZone)</div>
-
-            </div>
+            @Html.Partial("_Detail")
 
         </div>
         <div class="panel-footer">
