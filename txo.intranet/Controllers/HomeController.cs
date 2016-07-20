@@ -6,7 +6,9 @@ namespace txo.intranet.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            //return View();
+
+            return RedirectToAction("Index", "Suppliers");
         }
         
         public ActionResult About()

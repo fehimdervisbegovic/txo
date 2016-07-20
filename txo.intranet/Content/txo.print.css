@@ -244,15 +244,25 @@ a:hover{ color:#000000;}
 
 /*support-request*/
 
-.support-request-section{ width:659px; margin:0 auto; padding:69px 0;}
+.support-request-section{ width:659px; margin:0 auto; padding-bottom: 70px;}
 .support-form-sec{ background:#f2f2f2;border:1px solid #dfe0e0;border-radius:3px;}
 .support-form-sec ul{ padding:35px;}
 .support-form-sec ul li{ margin-bottom:14px; float:left;}
-.support-form-sec ul li input{border:1px solid #e6e6e6; border-radius:3px; padding:10px 34px;color:#636363;width:216px;}
+.support-form-sec ul li input{border:1px solid #e6e6e6; border-radius:3px; padding:10px 34px;color:#636363;}
 .support-form-sec ul li select.reason{ color:#636363; width:284px;border:1px solid #e6e6e6; border-radius:3px; padding:10px 36px; background:#fff url(../images/reason-img.png) no-repeat 10px center;}
 .support-form-sec ul li.nametxt1{ margin-left:15px;}
-.support-form-sec ul li.nametxt1:first-child{ margin-left:0;}
-.support-form-sec ul li.nametxt1 input{ background:#fff url(../images/man-img.png) no-repeat 10px center;}
+.support-form-sec ul li.nametxt1:first-child{width: 518px; margin-left:0px;}
+.support-form-sec ul li.nametxt1 input{ width:518px;border:1px solid #e6e6e6;border-radius:3px; color:#636363; padding:9px 34px;background:#fff url(../images/compny-img.png) no-repeat 10px center;font-family: 'Open Sans', sans-serif;}
+.support-form-sec ul li.addresstxt1 input{ width:518px;border:1px solid #e6e6e6;border-radius:3px; color:#636363; padding:9px 34px;background:#fff url(../images/register_address1.png) no-repeat 10px center;font-family: 'Open Sans', sans-serif;}
+.support-form-sec ul li.citytxt1 input{ background:#fff url(../images/register_city.png) no-repeat 10px center;}
+.support-form-sec ul li.statetxt1 input{ background:#fff url(../images/register_state.png) no-repeat 10px center;margin-left: 15px;}
+.support-form-sec ul li.ziptxt1 input{ background:#fff url(../images/register_zip.png) no-repeat 10px center;margin-left: 0px;}
+.support-form-sec ul li.timezone1 select{ color:#636363;margin-left: 15px; width:246px;border:1px solid #e6e6e6; border-radius:3px; padding:10px 36px; background:#fff url(../images/register_country.png) no-repeat 10px center;}
+.support-form-sec ul li.phonetxt1 input{ background:#fff url(../images/contact-img.png) no-repeat 10px center;margin-left: 0px;}
+.support-form-sec ul li.emailtxt1 input{ background:#fff url(../images/form-email-img.png) no-repeat 10px center;margin-left: 15px;}
+.support-form-sec ul li.contacttxt1 input{ width:518px;border:1px solid #e6e6e6;border-radius:3px; color:#636363; padding:9px 34px;background:#fff url(../images/man-img.png) no-repeat 10px center;font-family: 'Open Sans', sans-serif;}
+
+
 .support-form-sec ul li.orderid input{ background:#fff url(../images/order-img.png) no-repeat 10px center;}
 .support-form-sec ul li.tracking input{ background:#fff url(../images/tracking-img.png) no-repeat 10px center;}
 .support-form-sec ul li span{ color:#eb5635; display: inline-block;line-height: 36px;}
@@ -264,8 +274,9 @@ a:hover{ color:#000000;}
 .support-form-sec ul li.orderid{ margin-left:0px;}
 .support-form-sec ul li textarea{ width:514px; padding:10px 36px;border:1px solid #e6e6e6;border-radius:3px;color:#636363; min-height:67px;}
 .support-form-sec ul li.info textarea{ background:#fff url(../images/info-img.png) no-repeat 10px 11px;}
-.support-form-sec ul li.send1 input{ background:#d8761b url(../images/loginarrow.png) no-repeat 80% center; padding:12px 24px;border-radius:3px; border:none; font-size:15px; color:#fff; text-transform:uppercase; display:inline-block;width: auto;}
-.support-form-sec ul li.send1 input:hover{background:#f0790b url(../images/loginarrow.png) no-repeat 80% center;}
+.support-form-sec ul li.send1 input{ background:#008000; padding:12px 24px;border-radius:3px; border:none; font-size:15px; color:#fff; text-transform:uppercase; display:inline-block;width: auto; float:right}
+.support-form-sec ul li.send1 a{ background:#d8761b url(../images/backarrow.png) no-repeat 10% center; padding:12px 24px;border-radius:3px; border:none; font-size:15px; color:#fff; text-transform:uppercase; display:inline-block;width: auto; float:left}
+.support-form-sec ul li.send1 input:hover{background:#f0790b url(../images/loginarrow.png) no-repeat 90% center;}
 .support-form-sec ul li.send1{ text-align:center; width:100%;}
 .support-request-section p { color:#636363; font-size:18px; line-height:28px; text-align:center; padding-bottom:30px;}
 .support-request-section span{ display:block;}
