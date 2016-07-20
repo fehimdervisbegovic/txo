@@ -40,11 +40,7 @@
                 <div class="header-sec">
                     <div class="header-left"><a href="#"><img src="~/Content/logo.png"></a></div>
                     <div class="header-right">
-                        <ul class="reset">
-                           
-                            <li>@Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { @class="login" })</li>                            
-                        </ul>
-                        <div class="clear"></div>
+                        @Html.Partial("_LoginPartial")                                                
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -52,7 +48,7 @@
                 <div class="navigation-sec">
                     <ul class="reset">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Supliers</a></li>
+                        <li>@Html.ActionLink("Suppliers", "Index", "Suppliers", routeValues: null, htmlAttributes: new { })</li>
                     </ul>
                     <div class="clear"></div>
                 </div>
