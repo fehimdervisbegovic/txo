@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace txo.entities
 {
     using System;
@@ -22,17 +24,30 @@ namespace txo.entities
         }
     
         public int ID { get; set; }
+
+        [Display(Name = "Name")]
         public string Name { get; set; }
+        [Display(Name = "Address 1")]
         public string Address1 { get; set; }
+        [Display(Name = "Address 2")]
         public string Address2 { get; set; }
+        [Display(Name = "City")]
         public string City { get; set; }
+        [Display(Name = "State")]
         public string State { get; set; }
+        [Display(Name = "Postal code")]
         public string PostalCode { get; set; }
+        [Display(Name = "Contact phone")]
         public string ContactPhone { get; set; }
+        [Display(Name = "Time zone")]
         public Nullable<byte> TimeZone { get; set; }
+        [Display(Name = "Created")]
         public System.DateTime Created { get; set; }
+        [Display(Name = "Enabled")]
         public bool Enabled { get; set; }
+        [Display(Name = "Contact email")]
         public string ContactEmail { get; set; }
+        [Display(Name = "Contact name")]
         public string ContactName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

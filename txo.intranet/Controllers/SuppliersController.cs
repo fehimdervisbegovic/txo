@@ -44,10 +44,12 @@ namespace txo.intranet.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Address1,Address2,City,State,PostalCode,ContactPhone,TimeZone,Created,Enabled,ContactEmail,ContactName")] Supplier supplier)
+        public ActionResult Create([Bind(Include = "Name,Address1,Address2,City,State,PostalCode,ContactPhone,TimeZone,ContactEmail,ContactName")] Supplier supplier)
         {
             if (ModelState.IsValid)
             {
+                supplier.Created = DateTime.Now;
+                supplier.Enabled = true;
                 db.Supplier.Add(supplier);
                 db.SaveChanges();
                 return RedirectToAction("Index");
